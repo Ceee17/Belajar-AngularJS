@@ -1,0 +1,150 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+
+  label {
+    display: block;
+  }
+
+  h1,
+  h2,
+  h3,
+  p {
+    color: #000;
+  }
+
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-image: url("images/bg.jpg");
+    background-size: cover;
+  }
+
+  .container {
+    display: flex;
+    width: 90%;
+    height: auto;
+    text-align: center;
+    align-items: center;
+    /* background: rgba(255, 255, 255, 0.8); */
+    /* border-radius: 10px; */
+    /* box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); */
+  }
+
+  .column-left {
+    /* display: flex; */
+    /* align-items: center; */
+    text-align: justify;
+    width: 50%;
+    height: 100%;
+
+    border-right: 1px solid #ccc;
+    padding: 30px;
+    box-sizing: border-box;
+    background-color: #fefae0;
+    border-radius: 25px; /* Add border radius for the elevated effect */
+    box-shadow: 5px 5px 35px rgba(0, 0, 0, 0.5); /* Add shadow */
+    margin-inline: 0.5rem;
+  }
+  .column-right {
+    display: flex;
+    width: 50%;
+    height: 100%;
+    border-right: 1px solid #ccc;
+    padding: 30px;
+    box-sizing: border-box;
+    /* warna biru biar kyk KTP bnrn WKWKKWKW */
+    background-color: #90e0ef;
+    border-radius: 25px; /* Add border radius for the elevated effect */
+    box-shadow: 5px 5px 35px rgba(0, 0, 0, 0.5); /* Add shadow */
+    margin-inline: 0.5rem;
+  }
+
+  /* .column:last-child {
+    border-right: none;
+  } */
+
+  .column-right img {
+    height: auto;
+    width: 200px;
+    border-radius: 15%;
+    margin-right: 2rem;
+    /* padding-right: 15px; */
+  }
+
+  .radio-rows {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    /* align-items: center; */
+  }
+
+  .radio-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .radio-row label {
+    margin: 5px 12px;
+  }
+
+  label {
+    display: block;
+    margin-top: 5px;
+  }
+  /* 
+  .column-left label {
+    margin-left: 3rem;
+  } */
+
+  input[type="text"] {
+    width: 50%;
+    padding: 10px 1.2rem;
+    margin: 5px 0;
+    border: 1.5px solid #ccd5ae;
+    border-radius: 25px;
+    /* background-color: #ede0d4; */
+  }
+
+  select,
+  input[type="date"] {
+    width: auto;
+    padding: 10px 1.2rem;
+    margin: 5px 1px;
+    border: 1.5px solid #ccd5ae;
+    border-radius: 25px;
+  }
+
+  .radio-row input[type="radio"] {
+    /* margin-right: 5px; */
+    /* display: none; */
+    /* border: 1px solid #ccd5ae; */
+  }
+
+  .radio-row label {
+    position: relative;
+    cursor: pointer;
+  }
+
+  h2 {
+    margin: 8px 2px;
+  }
+
+  .btn {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 10px;
+  }
+
+  .btn button {
+    padding: 5px 4rem;
+    border: 1.5px solid #ccd5ae;
+    color: white;
+    background-color: #d4a373;
+    border-radius: 25px;
+  }
