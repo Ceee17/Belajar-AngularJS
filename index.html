@@ -16,7 +16,6 @@
         <label>Nama Depan : <input type="text" ng-model="firstName" /></label>
         <label>Nama Belakang : <input type="text" ng-model="lastName" /></label>
         <label>Umur : <input type="text" ng-model="umur" /></label>
-        <!-- <p>Input LAST NAME : <input type="text" ng-model="lastName" /></p> -->
         <label for="citySelect">
           Kota Kelahiran:
           <select id="citySelect" ng-model="selectedCity">
@@ -62,12 +61,6 @@
           <button ng-click="clearData()">Clear</button>
           <button ng-click="defaultData()">Reset</button>
         </div>
-
-        <!-- <h2>{{firstName + " " + lastName}}</h2>
-        <h3>{{title}}</h3>
-        <p>{{description}}</p>
-        <button ng-click="getSuggestion()">Get Suggestion</button>
-        <p>{{suggestion}}</p> -->
       </div>
       <div class="column-right">
         <div class="row">
@@ -82,10 +75,6 @@
           <h2>Alamat: {{address}}</h2>
           <h2>Agama: {{agama}}</h2>
         </div>
-        <!-- <h3>{{title}}</h3>
-        <p>{{description}}</p>
-        <button ng-click="getSuggestion()">Get Suggestion</button>
-        <p>{{suggestion}}</p> -->
       </div>
     </div>
     <script>
@@ -100,15 +89,6 @@
         $scope.date = "17-06-2004";
         $scope.address = "Jln Jembatan Gambang 1";
         $scope.agama = "Kristen";
-        // $scope.title = "Suggestion Generator";
-        // $scope.description = "Click the button to get a suggestion.";
-        // $scope.suggestion = "";
-
-        // $scope.getSuggestion = function () {
-        //   var suggestions = ["Go for a walk", "Read a book", "Call a friend", "Learn a new skill", "Try a new recipe"];
-        //   var randomIndex = Math.floor(Math.random() * suggestions.length);
-        //   $scope.suggestion = suggestions[randomIndex];
-        // };
 
         $scope.clearData = function () {
           $scope.npm = "";
