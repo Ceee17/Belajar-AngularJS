@@ -9,6 +9,10 @@
         padding: 0;
       }
 
+      label {
+        display: block;
+      }
+
       h1,
       h2,
       h3,
@@ -26,7 +30,34 @@
         background-size: cover;
       }
 
-      .column {
+      .container {
+        display: flex;
+        width: 90%;
+        height: auto;
+        text-align: center;
+        align-items: center;
+        /* background: rgba(255, 255, 255, 0.8); */
+        /* border-radius: 10px; */
+        /* box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); */
+      }
+
+      .column-left {
+        /* display: flex; */
+        /* align-items: center; */
+        text-align: justify;
+        width: 50%;
+        height: 100%;
+
+        border-right: 1px solid #ccc;
+        padding: 30px;
+        box-sizing: border-box;
+        background-color: #fff;
+        border-radius: 25px; /* Add border radius for the elevated effect */
+        box-shadow: 5px 5px 35px rgba(0, 0, 0, 0.5); /* Add shadow */
+        margin-inline: 0.5rem;
+      }
+      .column-right {
+        display: flex;
         width: 50%;
         height: 100%;
         border-right: 1px solid #ccc;
@@ -38,63 +69,133 @@
         margin-inline: 0.5rem;
       }
 
-      .column:last-child {
+      /* .column:last-child {
         border-right: none;
-      }
+      } */
 
-      .column img {
+      .column-right img {
         height: auto;
         width: 200px;
-        border-radius: 25%;
+        border-radius: 15%;
+        margin-right: 2rem;
+        /* padding-right: 15px; */
+      }
+
+      .radio-rows {
+        display: flex;
+        flex-direction: column;
+        /* justify-content: center; */
+        /* align-items: center; */
+      }
+
+      .radio-row {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .radio-row label {
+        margin: 5px 12px;
+      }
+
+      label {
+        display: block;
+        margin-top: 5px;
+      }
+      /* 
+      .column-left label {
+        margin-left: 3rem;
+      } */
+
+      input[type="text"],
+      select,
+      input[type="date"] {
+        width: 50%;
+        padding: 10px 1.2rem;
+        margin: 5px 0;
+        border: 1px solid #ccc;
+        border-radius: 25px;
+      }
+
+      input[type="radio"] {
+        margin-right: 5px;
+      }
+
+      h2 {
+        margin: 8px 2px;
       }
     </style>
     <script src="AngularJS/angular.min.js"></script>
     <title>Document</title>
   </head>
   <body>
-    <div style="display: flex; width: 80%; text-align: center" ng-app="myApp" ng-controller="myCtrl">
-      <div class="column">
-        <p>NPM : <input type="text" ng-model="npm" /></p>
-        <p>Nama Depan : <input type="text" ng-model="firstName" /></p>
-        <p>Nama Belakang : <input type="text" ng-model="lastName" /></p>
+    <div class="container" ng-app="myApp" ng-controller="myCtrl">
+      <div class="column-left">
+        <label>NPM : <input type="text" ng-model="npm" /></label>
+        <label>Kelas : <input type="text" ng-model="kelas" /></label>
+        <label>Nama Depan : <input type="text" ng-model="firstName" /></label>
+        <label>Nama Belakang : <input type="text" ng-model="lastName" /></label>
+        <label>Umur : <input type="text" ng-model="umur" /></label>
         <!-- <p>Input LAST NAME : <input type="text" ng-model="lastName" /></p> -->
-        <label for="citySelect">Kota Kelahiran:</label>
-        <select id="citySelect" ng-model="selectedCity">
-          <option value="Jakarta">Jakarta</option>
-          <option value="Bandung">Bandung</option>
-          <option value="Surabaya">Surabaya</option>
-          <option value="Semarang">Semarang</option>
-          <option value="Solo">Solo</option>
-          <option value="PangkalPinang">PangkalPinang</option>
-          <option value="Pontianak">Pontianak</option>
-          <option value="Jogja">Jogja</option>
-          <option value="Madura">Madura</option>
-          <option value="Bali">Bali</option>
-          <option value="Padang">Padang</option>
-          <option value="Medan">Medan</option>
-          <option value="Bogor">Bogor</option>
-          <option value="Cirebon">Cirebon</option>
-        </select>
-        <br />
+        <label for="citySelect">
+          Kota Kelahiran:
+          <select id="citySelect" ng-model="selectedCity">
+            <option value="Jakarta">Jakarta</option>
+            <option value="Bandung">Bandung</option>
+            <option value="Surabaya">Surabaya</option>
+            <option value="Semarang">Semarang</option>
+            <option value="Solo">Solo</option>
+            <option value="PangkalPinang">PangkalPinang</option>
+            <option value="Pontianak">Pontianak</option>
+            <option value="Jogja">Jogja</option>
+            <option value="Madura">Madura</option>
+            <option value="Bali">Bali</option>
+            <option value="Padang">Padang</option>
+            <option value="Medan">Medan</option>
+            <option value="Bogor">Bogor</option>
+            <option value="Cirebon">Cirebon</option>
+          </select>
+        </label>
         <label for="date">
           Tanggal Lahir:
           <input type="date" id="date" name="date" ng-model="date" />
         </label>
         <label for="address">
           Alamat:
-          <input type="text" id="address" ng />
+          <input type="text" id="address" ng-model="address" />
         </label>
+        <p>Agama :</p>
+        <div class="radio-rows">
+          <div class="radio-row">
+            <label for="islam"><input type="radio" name="agama" id="islam" value="Islam" ng-model="agama" /> Islam</label>
+            <label for="kristen"><input type="radio" name="agama" id="kristen" value="Kristen" ng-model="agama" /> Kristen</label>
+            <label for="buddha"><input type="radio" name="agama" id="buddha" value="Buddha" ng-model="agama" /> Buddha</label>
+          </div>
+          <div class="radio-row">
+            <label for="katolik"> <input type="radio" name="agama" id="katolik" value="Katolik" ng-model="agama" /> Katolik</label>
+            <label for="hindu"> <input type="radio" name="agama" id="hindu" value="Hindu" ng-model="agama" /> Hindu</label>
+            <label for="konghucu"> <input type="radio" name="agama" id="konghucu" value="Konghucu" ng-model="agama" /> Konghucu</label>
+          </div>
+        </div>
         <!-- <h2>{{firstName + " " + lastName}}</h2>
         <h3>{{title}}</h3>
         <p>{{description}}</p>
         <button ng-click="getSuggestion()">Get Suggestion</button>
         <p>{{suggestion}}</p> -->
       </div>
-      <div class="column">
-        <img src="images/pfp.jpg" alt="" />
-        <h2>NPM : {{npm}}</h2>
-        <h2>Nama : {{firstName + " " + lastName}}</h2>
-        <h2>Tempat: {{selectedCity}}, {{date | date:'dd-MM-yyyy'}}</h2>
+      <div class="column-right">
+        <div class="row">
+          <img src="images/pfp.jpg" alt="" />
+        </div>
+        <div class="row" style="align-self: center; text-align: start">
+          <h2>NPM : {{npm}}</h2>
+          <h2>Kelas : {{kelas}}</h2>
+          <h2>Nama : {{firstName + " " + lastName}}</h2>
+          <h2>Umur : {{umur}}</h2>
+          <h2>Tempat: {{selectedCity}}, {{date | date:'dd-MM-yyyy'}}</h2>
+          <h2>Alamat: {{address}}</h2>
+          <h2>Agama: {{agama}}</h2>
+        </div>
         <!-- <h3>{{title}}</h3>
         <p>{{description}}</p>
         <button ng-click="getSuggestion()">Get Suggestion</button>
@@ -105,13 +206,17 @@
       var app = angular.module("myApp", []);
       app.controller("myCtrl", function ($scope) {
         $scope.npm = "535220023";
+        $scope.kelas = "TI A";
         $scope.firstName = "Jessen";
         $scope.lastName = "Chayadi";
+        $scope.umur = "19";
         $scope.selectedCity = "Jakarta";
         $scope.date = "17-06-2004";
-        $scope.title = "Suggestion Generator";
-        $scope.description = "Click the button to get a suggestion.";
-        $scope.suggestion = "";
+        $scope.address = "Jln Jembatan Gambang 1";
+        $scope.agama = "Kristen";
+        // $scope.title = "Suggestion Generator";
+        // $scope.description = "Click the button to get a suggestion.";
+        // $scope.suggestion = "";
 
         $scope.getSuggestion = function () {
           var suggestions = ["Go for a walk", "Read a book", "Call a friend", "Learn a new skill", "Try a new recipe"];
