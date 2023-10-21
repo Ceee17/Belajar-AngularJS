@@ -51,7 +51,7 @@
         border-right: 1px solid #ccc;
         padding: 30px;
         box-sizing: border-box;
-        background-color: #fff;
+        background-color: #fefae0;
         border-radius: 25px; /* Add border radius for the elevated effect */
         box-shadow: 5px 5px 35px rgba(0, 0, 0, 0.5); /* Add shadow */
         margin-inline: 0.5rem;
@@ -63,7 +63,7 @@
         border-right: 1px solid #ccc;
         padding: 30px;
         box-sizing: border-box;
-        background-color: #fff;
+        background-color: #fefae0;
         border-radius: 25px; /* Add border radius for the elevated effect */
         box-shadow: 5px 5px 35px rgba(0, 0, 0, 0.5); /* Add shadow */
         margin-inline: 0.5rem;
@@ -107,22 +107,51 @@
         margin-left: 3rem;
       } */
 
-      input[type="text"],
-      select,
-      input[type="date"] {
+      input[type="text"] {
         width: 50%;
         padding: 10px 1.2rem;
         margin: 5px 0;
-        border: 1px solid #ccc;
+        border: 1.5px solid #ccd5ae;
+        border-radius: 25px;
+        /* background-color: #ede0d4; */
+      }
+
+      select,
+      input[type="date"] {
+        width: auto;
+        padding: 10px 1.2rem;
+        margin: 5px 1px;
+        border: 1.5px solid #ccd5ae;
         border-radius: 25px;
       }
 
-      input[type="radio"] {
-        margin-right: 5px;
+      .radio-row input[type="radio"] {
+        /* margin-right: 5px; */
+        /* display: none; */
+        /* border: 1px solid #ccd5ae; */
+      }
+
+      .radio-row label {
+        position: relative;
+        cursor: pointer;
       }
 
       h2 {
         margin: 8px 2px;
+      }
+
+      .btn {
+        display: flex;
+        justify-content: space-evenly;
+        margin-top: 10px;
+      }
+
+      .btn button {
+        padding: 5px 4rem;
+        border: 1.5px solid #ccd5ae;
+        color: white;
+        background-color: #d4a373;
+        border-radius: 25px;
       }
     </style>
     <script src="AngularJS/angular.min.js"></script>
@@ -177,6 +206,12 @@
             <label for="konghucu"> <input type="radio" name="agama" id="konghucu" value="Konghucu" ng-model="agama" /> Konghucu</label>
           </div>
         </div>
+
+        <div class="btn">
+          <button ng-click="clearData()">Clear</button>
+          <button ng-click="defaultData()">Reset</button>
+        </div>
+
         <!-- <h2>{{firstName + " " + lastName}}</h2>
         <h3>{{title}}</h3>
         <p>{{description}}</p>
@@ -218,10 +253,34 @@
         // $scope.description = "Click the button to get a suggestion.";
         // $scope.suggestion = "";
 
-        $scope.getSuggestion = function () {
-          var suggestions = ["Go for a walk", "Read a book", "Call a friend", "Learn a new skill", "Try a new recipe"];
-          var randomIndex = Math.floor(Math.random() * suggestions.length);
-          $scope.suggestion = suggestions[randomIndex];
+        // $scope.getSuggestion = function () {
+        //   var suggestions = ["Go for a walk", "Read a book", "Call a friend", "Learn a new skill", "Try a new recipe"];
+        //   var randomIndex = Math.floor(Math.random() * suggestions.length);
+        //   $scope.suggestion = suggestions[randomIndex];
+        // };
+
+        $scope.clearData = function () {
+          $scope.npm = "";
+          $scope.kelas = "";
+          $scope.firstName = "";
+          $scope.lastName = "";
+          $scope.umur = "";
+          $scope.selectedCity = "";
+          $scope.date = "";
+          $scope.address = "";
+          $scope.agama = "";
+        };
+
+        $scope.defaultData = function () {
+          $scope.npm = "535220023";
+          $scope.kelas = "TI A";
+          $scope.firstName = "Jessen";
+          $scope.lastName = "Chayadi";
+          $scope.umur = "19";
+          $scope.selectedCity = "Jakarta";
+          $scope.date = "17-06-2004";
+          $scope.address = "Jln Jembatan Gambang 1";
+          $scope.agama = "Kristen";
         };
       });
     </script>
